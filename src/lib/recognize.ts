@@ -1,5 +1,5 @@
 import Tesseract from 'tesseract.js';
-import fs from 'fs'
+// import fs from 'fs'
 
 export async function checkNopol(nopol: string): Promise<string> {
   async function saveImage(url: RequestInfo | URL, cookie: string) {
@@ -10,20 +10,22 @@ export async function checkNopol(nopol: string): Promise<string> {
       }
     });
     const buffer = await req.arrayBuffer();
-    fs.writeFileSync('image.png', Buffer.from(buffer));
+    // fs.writeFileSync('image.png', Buffer.from(buffer));
+    return Buffer.from(buffer)
   }
 
   async function getCaptcha() {
     const req = await fetch(`https://info.dipendajatim.go.id/logic_pkb.php?act=captcha`);
     const imgUrl = 'https://info.dipendajatim.go.id' + (await req.text()).match(/src="([^"]*)"/)![1];
     const cookie = req.headers.get('set-cookie') || '';
-    await saveImage(imgUrl, cookie);
-    return cookie;
+    const buffer = await saveImage(imgUrl, cookie);
+    return {cookie,buffer};
   }
 
-  async function recognize() {
+  async function recognize(buffer:any) {
     const res = await Tesseract.recognize(
-      'image.png',
+      buffer,
+      // 'image.png',
       'eng'
     );
     return String(res.data.text).replace('\n', '');
@@ -52,8 +54,8 @@ export async function checkNopol(nopol: string): Promise<string> {
     });
     return await req.text();
   }
-  const cookie = await getCaptcha() || '';
-  const code = await recognize();
+  const {cookie,buffer} = await getCaptcha() || '';
+  const code = await recognize(buffer);
   // const nopol = 'w 3240 lc';
   const result = JSON.parse(await check({ cookie, nopol, code }));
   if (result.msg) {
