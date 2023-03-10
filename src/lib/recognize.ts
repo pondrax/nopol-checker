@@ -26,7 +26,11 @@ export async function checkNopol(nopol: string): Promise<string> {
     const res = await Tesseract.recognize(
       buffer,
       // 'image.png',
-      'eng'
+      'eng',{
+        workerPath: 'https://unpkg.com/tesseract.js@v4.0.2/dist/worker.min.js',
+        // langPath: 'https://tessdata.projectnaptha.com/4.0.0',
+        corePath: 'https://unpkg.com/tesseract.js-core@v4.0.2/tesseract-core.wasm.js',
+      }
     );
     return String(res.data.text).replace('\n', '');
   }
