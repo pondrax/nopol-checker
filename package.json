@@ -22,6 +22,7 @@
 	"type": "module",
 	"dependencies": {
 		"@types/node": "^18.15.0",
-		"node-html-parser": "^6.1.5"
+		"node-html-parser": "^6.1.5",
+		"tesseract.js-core": "^4.0.2"
 	}
 }

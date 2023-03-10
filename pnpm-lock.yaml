@@ -8,6 +8,7 @@ specifiers:
   svelte: ^3.54.0
   svelte-check: ^3.0.1
   tesseract.js: ^4.0.2
+  tesseract.js-core: ^4.0.2
   tslib: ^2.4.1
   typescript: ^4.9.3
   vite: ^4.0.0
@@ -15,6 +16,7 @@ specifiers:
 dependencies:
   '@types/node': 18.15.0
   node-html-parser: 6.1.5
+  tesseract.js-core: 4.0.2
 
 devDependencies:
   '@sveltejs/adapter-auto': 2.0.0_@sveltejs+kit@1.11.0
@@ -1272,7 +1274,6 @@ packages:
 
   /tesseract.js-core/4.0.2:
     resolution: {integrity: sha512-ZVyYPN+ZAos31ZErqzcFme6XaOA8xrZxisNyk3nTicHVPSqtQH7UgZ36XoZZY0Exeugr5A+Uxv5ll9aMd1c0jg==}
-    dev: true
 
   /tesseract.js/4.0.2:
     resolution: {integrity: sha512-OKc6N68czBa8QnoBwx+kAUG4OyqskXa1O7wSrOXOEYZ0TQcGa3daRVIsRhtVAmNMTrvZnOsg49kfNrw0BZaFEA==}
