@@ -23,6 +23,7 @@ export async function checkNopol(nopol: string): Promise<string> {
   }
 
   async function recognize(buffer:any) {
+    Tesseract.createWorker()
     const res = await Tesseract.recognize(
       buffer,
       // 'image.png',
