@@ -8,7 +8,7 @@ specifiers:
   svelte: ^3.54.0
   svelte-check: ^3.0.1
   tesseract-wasm: ^0.10.0
-  tesseract.js: ^4.0.2
+  tesseract.js: ^3.0.3
   tslib: ^2.4.1
   typescript: ^4.9.3
   vite: ^4.0.0
@@ -23,7 +23,7 @@ devDependencies:
   '@sveltejs/kit': 1.11.0_svelte@3.56.0+vite@4.1.4
   svelte: 3.56.0
   svelte-check: 3.1.0_svelte@3.56.0
-  tesseract.js: 4.0.2
+  tesseract.js: 3.0.3
   tslib: 2.5.0
   typescript: 4.9.5
   vite: 4.1.4_@types+node@18.15.0
@@ -1282,12 +1282,12 @@ packages:
       comlink: 4.4.1
     dev: false
 
-  /tesseract.js-core/4.0.2:
-    resolution: {integrity: sha512-ZVyYPN+ZAos31ZErqzcFme6XaOA8xrZxisNyk3nTicHVPSqtQH7UgZ36XoZZY0Exeugr5A+Uxv5ll9aMd1c0jg==}
+  /tesseract.js-core/3.0.2:
+    resolution: {integrity: sha512-2fD76ka9nO/C616R0fq+M9Zu91DA3vEfyozp0jlxaJOBmpfeprtgRP3cqVweZh2darE1kK/DazoxZ65g7WU99Q==}
     dev: true
 
-  /tesseract.js/4.0.2:
-    resolution: {integrity: sha512-OKc6N68czBa8QnoBwx+kAUG4OyqskXa1O7wSrOXOEYZ0TQcGa3daRVIsRhtVAmNMTrvZnOsg49kfNrw0BZaFEA==}
+  /tesseract.js/3.0.3:
+    resolution: {integrity: sha512-eZ1+OGWvF5IMExAzIwnDf3S3kf2FeC+i4qrMTRvBSlZeHc3ONy0vCmaKmBQz6scjB6C1W2w2x0r4lCEh95qBnw==}
     requiresBuild: true
     dependencies:
       babel-eslint: 10.1.0
@@ -1300,7 +1300,7 @@ packages:
       opencollective-postinstall: 2.0.3
       regenerator-runtime: 0.13.11
       resolve-url: 0.2.1
-      tesseract.js-core: 4.0.2
+      tesseract.js-core: 3.0.2
       wasm-feature-detect: 1.5.1
       zlibjs: 0.3.1
     transitivePeerDependencies:

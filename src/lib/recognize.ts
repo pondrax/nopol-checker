@@ -1,5 +1,5 @@
 import Tesseract from 'tesseract.js';
-// import fs from 'fs'
+import fs from 'fs'
 
 export async function checkNopol(nopol: string): Promise<string> {
   async function saveImage(url: RequestInfo | URL, cookie: string) {
@@ -10,7 +10,7 @@ export async function checkNopol(nopol: string): Promise<string> {
       }
     });
     const buffer = await req.arrayBuffer();
-    // fs.writeFileSync('image.png', Buffer.from(buffer));
+    // fs.writeFileSync('./image.png', Buffer.from(buffer));
     return Buffer.from(buffer)
   }
 
@@ -23,7 +23,6 @@ export async function checkNopol(nopol: string): Promise<string> {
   }
 
   async function recognize(buffer:any) {
-    Tesseract.createWorker()
     const res = await Tesseract.recognize(
       buffer,
       // 'image.png',
